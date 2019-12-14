@@ -89,5 +89,21 @@
             $${temp0 := \theta_1 - \alpha \dfrac {\partial}{\partial\theta_1} J(\theta_0 , \theta_1)}$$
             $${\theta_0 := temp0}$$
             $${\theta_1 := temp1}$$
-    </body>
+            <b>Gradient Descent For Linear Regression: </b>
+            <p>we can substitute our actual cost function and our actual hypothesis function into the equation</p>
+            <p>repeat unitl convergence: {</p>
+            $${\theta_0 := \theta_0 - \alpha \dfrac{1}{m} \sum_{i=1}^m (h_\theta (x_i) - y_i)}$$
+            $${\theta_1 := \theta_1 - \alpha \dfrac{1}{m} \sum_{i=1}^m ((h_\theta (x_i) - y_i)x_i)}$$
+            <p>}</p>
+            <p>where m is the size of the training set, \theta_0 a constant that will be changing simultaneously with
+                \theta_1 and x_i , y_i are values of the given training set(data) </p>
+            <p>The derivation for a single example</p>
+            $${\dfrac{\partial}{\partial \theta_j} j(\theta) = \dfrac{\partial}{\partial \theta_j} \dfrac{1}{2}}$$
+            $${ = 2 * \dfrac{1}{2} (h_\theta (x) - y) * \dfrac {\partial}{\partial \theta_j}(h_\theta(x) - y)}$$
+            $${ = (h_\theta(x) - y) * \dfrac{\partial}{\partial \theta_j} (\sum_{i=0}^n \theta_i x_i - y)}$$
+            $${= (h_\theta (x) - y) x_j}$$
+            <p>The point of all this is that if we start with a guess for our hypothesis and then repeatedly apply these gradient descent equations
+                our hypothesis will become more and more accurate.
+            </p>
+</body>
 </html>
