@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Machine Leaning notes</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <div>
+            <b>Supervised Learning</b>
+            <p>-we are given a data set and already know what the correct output should 
+                look like, having the idea that there is a relationship between the input 
+                and the output. 
+            </p>
+            <p>-Supervised learning problems are categorized into either <b>"regression"</b> or 
+                <b>"classification"</b> problems.
+            </p>
+            <p><b>Regression Problems -</b> we are trying to predict the results within a continous
+                output, meaning that we are trying to map input variables to some continuous function.
+            </p>
+            <p>Example 1 of regression problem:<br>
+                -Given data about the size of houses on the real estate market, try to predict
+                thier price. Price as a function of size is continous output
+            </p>
+            <p>Example 2 of regression problem:<br>
+                -Given a picture of a person, we have to predict their age on the basis of the
+                given picture.
+            </p>
+            <p><b>Classifcation problems -</b> we are instead trying to predict results in a discrete
+                output. In other words, we are trying to map input variables into discrete categories.
+            </p>
+            <p>Example 1 of classification problem:<br>
+                -Given a patient with a tumor, we have to predict whether the tumor is malignant or 
+                benign. binary
+            </p>
+        </div>
+        <div>
+            <b>Unsupervised Learning</b>
+            <p>-allows us to approach problems with little or no idea what our results should look like.
+                We can derive structure from data where we dont necessarily know the effect of the variables.
+            </p>
+            <p>We can obtain this structure by clustering the data based on relationships among the variables
+                in the data.
+            </p>
+            <p>With unsupervised learning there is no feedback based on the prediction results.</p>
+            <p><b>Example: </b></p>
+            <p><b>Clustering: </b>
+                    Take a collection of 1,000,000 different genes, and find a way to automatically group these 
+                genes into groups that are somehow similar or related by different variables, such as lifespan,
+                location, roles, and so on.
+            </p>
+            <p><b>Non-clustering: </b>
+                    The "Cocktail Party Algorithm", allows you to find structure in a chaotic environment.
+                    (i.e. identifying individual voices and music from a mesh of sounds at a cocktail party)
+            </p>
+        </div>
+        <div>
+            <b>Cost Function</b>
+            <p>We can measure the accuracy of our hypothesis function by using a cost function</p>
+            <p>This takes an average difference of all the results of the hypothesis with inputs from x's 
+                and the actual output y's
+            </p>
+            $${ J(\theta_0, \theta_1) = \dfrac {1}{2m} \displaystyle \sum _{i=1}^m \left ( \hat{y}_{i}- y_{i} \right)^2 = \dfrac {1}{2m} \displaystyle \sum _{i=1}^m \left (h_\theta (x_{i}) - y_{i} \right)^2 }$$
+
+            <p>This function is also called the "Squared error function"</p>
+            <p>Hypothesis: </p>
+            $${h_\theta(x) = \theta_0 + \theta_1 x}$$
+            <p>Parameters: $${\theta_0 ,\theta_1}$$</p>
+            <p>Cost Function: </p>
+            $${J(\theta_o  \theta_1) = \dfrac {1}{2m} \sum_{i=1}^m (h_\theta (x_i) - y_i)^2}$$
+            <p>Goal: </p>
+            $${\underset{\theta_0 , \theta_1}{minimum} = J(\theta_0 , \theta_1)}$$
+        </div>
+        <div>
+            <b>Gradient descent</b>
+            <p>Gradient descent algorithm is: </p>
+            <p>repeat until convergence: for (j = 0 and j = 1)</p>
+            $${\theta_j := \theta_j - \alpha \dfrac {\partial}{\partial\theta_j} J(\theta_0 , \theta_1)}$$
+            <p> := is assignment operator</p>
+            <p>alpha: is a number called the learning rate. What alpha does, is it controls how big of a step we take down the hill.
+                If alpha is very large then we are talking very large and aggressive steps down hill. If alpha is small we are talking small conservate 
+                steps down the hill.
+            </p>
+            <p><b>Correct Example of Simultaneous update:</b></p>
+            $${temp0 := \theta_0 - \alpha \dfrac{\partial}{\partial\theta_0} J(\theta_0 , \theta_1)}$$
+            $${temp0 := \theta_1 - \alpha \dfrac {\partial}{\partial\theta_1} J(\theta_0 , \theta_1)}$$
+            $${\theta_0 := temp0}$$
+            $${\theta_1 := temp1}$$
+    </body>
+</html>
