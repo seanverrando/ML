@@ -1,1 +1,1 @@
-HTML document containing Machine leaning notes and using MATHJAX
+HTML document containing Machine leaning notes and algorithms and using MATHJAX
